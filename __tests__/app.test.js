@@ -8,6 +8,10 @@ import {
   evensOnlyArray,
   arraySum,
   allNumbersGreaterThanZero,
+  someNumbersAreOdd,
+  evensOnlyAndDoubleArray,
+  findItem,
+  sortArray,
 } from '../app'
 
 
@@ -40,13 +44,34 @@ describe('arraySum tests', () => {
 })
 
 describe('allNumbersGreaterThanZero tests', () => {
-  test('returns true or false for array', () => {
+  test('returns true if all array elements are >0', () => {
     expect(allNumbersGreaterThanZero(numberArray)).toEqual(true)
   })
 })
 
+describe('someNumbersAreOdd tests', () => {
+  test('returns true if any number is odd', () => {
+    expect(someNumbersAreOdd(numberArray)).toEqual(true)
+  })
+})
 
+describe('evensOnlyAndDoubleArray tests', () => {
+  test('returns an array that is only the even values and doubled', () => {
+    expect(evensOnlyAndDoubleArray(numberArray)).toEqual([4,8])
+  })
+})
 
+describe('findItem tests', () => {
+  test('no item present returns not found', () => {
+    expect(findItem(numberArray, "doggy")).toEqual('not found')
+  })
+})
+
+describe('sortArray tests', () => {
+  test('returns array is descending order', () => {
+    expect(sortArray(numberArray)).toEqual([4,3,2,1])
+  })
+})
 
 
 

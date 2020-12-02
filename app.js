@@ -11,7 +11,7 @@ export const doubleArray = (numberArray) => {
 }
 
 export const evensOnlyArray = (numberArray) => {
-  let filteredArray = numberArray.filter(value => (value % 2 == 0));
+  let filteredArray = numberArray.filter(value => value % 2 === 0);
   return filteredArray;
 };
 
@@ -28,5 +28,29 @@ export const arraySum = (numberArray) => {
 
 export const allNumbersGreaterThanZero = (numberArray) => {
   const iseven = (value) => value >= 0 
-  return numberArray.every(iseven);
+  return numberArray.every(iseven,0);
+}
+
+export const someNumbersAreOdd = (numberArray) => {
+  const someOdd = (value) => (value % 2) === 1
+  return numberArray.some(someOdd)
+}
+
+export const evensOnlyAndDoubleArray = (numberArray) => {
+  let filtered = evensOnlyArray(numberArray)
+  return doubleArray(filtered)
+}
+
+export const findItem = (numberArray, item)  => {
+  let found = numberArray.find(value => value == item)
+  if (found !== undefined) {
+    return found;
+  }
+  else {
+    return 'not found'
+  }
+}
+
+export const sortArray = (numberArray) => {
+  return numberArray.sort((a,b) => b-a)
 }
